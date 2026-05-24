@@ -12,7 +12,7 @@ timedatectl set-timezone Europe/Moscow
 echo 'TYPE=eth' > /etc/net/ifaces/enp7s1/options
 echo '192.168.3.2/26' > /etc/net/ifaces/enp7s1/ipv4address
 echo 'default via 192.168.1.1' > /etc/net/ifaces/enp7s1/ipv4route
-echo $'search au-team.irpo\nnameserver 192.168.100.2' > /etc/net/ifaces/enp7s1/resolv.conf
+echo $'search au-team.irpo\nameserver 192.168.100.2' > /etc/net/ifaces/enp7s1/resolv.conf
 systemctl restart network
 ping hq-srv -c 3
 
