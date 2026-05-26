@@ -1,8 +1,5 @@
 
 ==========BR-SRV==========
-
-root/toor
-
 -------имя хоста/NTP---------
 hostnamectl hostname br-srv.au-team.irpo
 	exec bash
