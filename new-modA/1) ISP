@@ -1,7 +1,5 @@
 ==========ISP==========
 
-root/toor
-
 -------имя хоста---------
 hostnamectl hostname ISP
 exec bash
@@ -23,8 +21,9 @@ echo '172.16.2.1/28' > /etc/net/ifaces/ens20/ipv4address
 
 apt-get update && apt-get install nftables -y
 
-+++
+------------------------
 	nftables.nft
+------------------------
 
 cat << EOF > /etc/nftables/nftables.nft
 #!/usr/sbin/nft -f
@@ -38,7 +37,7 @@ table ip nat {
 EOF
 
 +++
-cat /etc/nftables/nftables.nft 
+
 
 systemctl enable --now nftables
 
