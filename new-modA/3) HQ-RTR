@@ -1,8 +1,6 @@
 
 ==========HQ-RTR=======
 
-root/toor
-
 -------имя хоста---------
 hostnamectl hostname hq-rtr.au-team.irpo
 exec bash
@@ -79,9 +77,6 @@ EOF
 +++
 
 systemctl enable --now nftables
-
---------TIMEZONE----------
-timedatectl set-timezone Europe/Moscow
 
 -------настройка net_admin-------------
 useradd net_admin
