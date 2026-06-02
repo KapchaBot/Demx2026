@@ -11,8 +11,9 @@ parted /dev/sdb
 	set 1 raid on
 	print
 	select /dev/sdc
+	select /dev/sdd
 
-mdadm --create /dev/md0 --level=0 --raid-devices=2 /dev/sdb1 /dev/sdc1
+mdadm --create /dev/md0 --level=5 --raid-devices=2 /dev/sdb1 /dev/sdc1 /dev/sdd1
 mdadm --detail --scan >> /etc/mdadm.conf
 mkfs.ext4 /dev/md0
 mkdir /raid
