@@ -18,13 +18,13 @@ echo 'nameserver 8.8.8.8' > /etc/net/ifaces/ens18/resolv.conf
 
 --------настройка VLAN-----------
 
-echo $'100\n200\n999' | xargs -i bash -c 'echo -e "TYPE=vlan\nHOST=ens19\nVID={}" > /etc/net/ifaces/vlan{}/options'
+echo $'114\n214\n814' | xargs -i bash -c 'echo -e "TYPE=vlan\nHOST=ens19\nVID={}" > /etc/net/ifaces/vlan{}/options'
 
 cat /etc/net/ifaces/vlan999/options 
 
-echo '192.168.100.1/27' > /etc/net/ifaces/vlan100/ipv4address
-echo '192.168.200.1/28' > /etc/net/ifaces/vlan200/ipv4address
-echo '192.168.99.1/29' > /etc/net/ifaces/vlan999/ipv4address
+echo '192.168.100.1/27' > /etc/net/ifaces/vlan114/ipv4address ## HQ-SRV
+echo '192.168.200.1/28' > /etc/net/ifaces/vlan214/ipv4address ## HQ-CLI 
+echo '192.168.99.1/29' > /etc/net/ifaces/vlan814/ipv4address ## MGMNT
 -------включение маршрутизации---------
 
 sed -i 's/net.ipv4.ip_forward = 0/net.ipv4.ip_forward = 1/' /etc/net/sysctl.conf
