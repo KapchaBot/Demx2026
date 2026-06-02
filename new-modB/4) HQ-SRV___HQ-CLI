@@ -52,7 +52,7 @@ systemctl enable --now mariadb
 
 mariadb -e "CREATE DATABASE webdb;"
 mariadb -e "
-CREATE USER 'web'@'localhost' IDENTIFIED BY 'P@ssw0rd';
+CREATE USER 'web4'@'localhost' IDENTIFIED BY 'P@ssw0rd';
 GRANT ALL PRIVILEGES ON webdb.* TO 'web'@'localhost';
 "
 
@@ -61,7 +61,7 @@ mariadb -e "USE webdb; SHOW TABLES;"
 
 vim /var/www/html/index.php
 	$servername = "localhost";
-	$username = "web";
+	$username = "web4";
 	$password = "P@ssw0rd";
 	$dbname = "webdb";
 
