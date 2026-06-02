@@ -17,7 +17,7 @@ ping zz.ru -c3
 
 -------настройка sshuser-------------
 
-useradd -u 2026 sshuser
+useradd -u 2014 sshuser
 echo "sshuser:P@ssw0rd" | chpasswd
 usermod -aG wheel sshuser
 echo "WHEEL_USERS ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/sshuser
