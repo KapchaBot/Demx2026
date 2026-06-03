@@ -13,12 +13,12 @@ parted /dev/sdb
 	select /dev/sdc
 	select /dev/sdd
 
-mdadm --create /dev/md0 --level=5 --raid-devices=2 /dev/sdb1 /dev/sdc1 /dev/sdd1
+mdadm --create /dev/md0 --level=5 --raid-devices=3 /dev/sdb1 /dev/sdc1 /dev/sdd1
 mdadm --detail --scan >> /etc/mdadm.conf
-mkfs.ext4 /dev/md0
+mkfs.ext4 /dev/md4
 mkdir /raid
 cp /etc/fstab /etc/fstab.back
-echo "/dev/md0 /raid ext4 defaults 0 0	" >> /etc/fstab
+echo "/dev/md4 /raid ext4 defaults 0 0	" >> /etc/fstab
 mount -av
 df -T
 
