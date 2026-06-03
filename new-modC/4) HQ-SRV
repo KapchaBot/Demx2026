@@ -104,7 +104,7 @@ sed -i 's/before = paths-altlinux.conf/before = paths-altlinux-systemd.conf/' /e
 cat << EOF > /etc/fail2ban/jail.d/sshd.conf
 [sshd]
 enabled = true
-port = 2026
+port = 2014
 filter = sshd
 backend = systemd
 maxretry = 3
